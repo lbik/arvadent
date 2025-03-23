@@ -1,15 +1,16 @@
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <>
       <Header />
-      <main>
+      <Layout>
         <Hero />
-        {/* Další sekce jako služby, tým, kontakt mohou být přidány později */}
-      </main>
+        {/* Další sekce */}
+      </Layout>
       <Footer />
     </>
   );
