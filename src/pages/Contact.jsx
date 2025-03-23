@@ -5,7 +5,7 @@ export default function Contact() {
 
       <div className="space-y-4 text-gray-700">
         <p>
-          <strong>Ordinace Arvadent</strong> Kmochova, 1652/8, 73601, Havířov
+          <strong>Ordinace Arvadent</strong>
         </p>
         <p> Kmochova, 1652/8, 73601, Havířov</p>
         <p>
