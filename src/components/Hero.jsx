@@ -1,24 +1,25 @@
 export default function Hero() {
   return (
-    <section className="bg-gray-100 w-full h-screen flex items-center justify-center">
-      <div className="bg-white p-10 rounded shadow max-w-2xl w-full text-center">
-        <h2 className="text-4xl font-bold text-blue-700 mb-4">
+    <section className="bg-white pt-28 pb-20 px-6 text-center">
+      <div className="max-w-screen-md mx-auto">
+        <h1 className="text-5xl font-bold text-blue-700 mb-6">
           Vítejte v Arvadent
-        </h2>
-        <p className="text-lg text-gray-700 mb-6">
-          Moderní zubní ordinace s důrazem na péči, komfort a úsměv.
+        </h1>
+        <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+          Moderní zubní ordinace v Havířově. Profesionální péče, lidský přístup
+          a zdravý úsměv pro každého.
         </p>
-        <div className="border border-red-500 mb-4">
-          <p>Testovací box</p>
-        </div>
         <div className="space-x-4">
           <a
-            href="#contact"
-            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+            href="#kontakt"
+            className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-blue-700 transition"
           >
             Objednat se
           </a>
-          <a href="#about" className="text-blue-600 hover:underline">
+          <a
+            href="#o-nas"
+            className="text-blue-600 hover:underline font-medium"
+          >
             Více o nás
           </a>
         </div>

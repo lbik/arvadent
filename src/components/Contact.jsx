@@ -7,8 +7,8 @@ export default function Contact() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Kontaktní info */}
-          <div className="bg-white p-8 rounded-xl shadow space-y-4 text-gray-700 text-base">
+          {/* Kontaktní informace */}
+          <div className="bg-white p-8 rounded-xl shadow text-gray-700 space-y-6 text-base">
             <div>
               <p className="text-lg font-semibold text-gray-900">
                 Ordinace Arvadent

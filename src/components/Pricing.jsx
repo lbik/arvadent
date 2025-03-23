@@ -32,7 +32,7 @@ export default function Pricing() {
         </h2>
 
         {pricelist.map((group, index) => (
-          <div key={index} className="mb-12">
+          <div key={index} className="mb-16">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">
               {group.category}
             </h3>
