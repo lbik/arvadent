@@ -1,24 +1,40 @@
+import aboutImage from '../assets/about.jpg';
+
 export default function About() {
   return (
-    <section className="py-12 px-6 max-w-3xl mx-auto">
-      <h2 className="text-3xl font-bold text-blue-700 mb-6">O nás</h2>
+    <section className="bg-gray-50 py-20 px-6">
+      <div className="max-w-screen-lg mx-auto">
+        <h2 className="text-4xl font-bold text-blue-700 mb-12 text-center">
+          O nás
+        </h2>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div className="text-gray-700 leading-relaxed text-lg">
+            <p className="mb-6">
+              Jsme moderní zubní ordinace v Havířově, která klade důraz na
+              profesionální péči, špičkové technologie a přátelský přístup.
+            </p>
+            <p className="mb-6">
+              Nabízíme komplexní stomatologickou péči – od prevence až po
+              estetická ošetření. Pravidelně se vzděláváme a sledujeme
+              nejnovější trendy v oboru.
+            </p>
+            <p>
+              Věříme, že zdravý úsměv je klíčem k sebevědomí – a ten vám rádi
+              pomůžeme udržet po celý život.
+            </p>
+          </div>
 
-      <p className="mb-4 text-gray-700">
-        Jsme moderní zubní ordinace v Havířově, která klade důraz na
-        profesionální péči, přátelský přístup a individuální přístup ke každému
-        pacientovi. Naším cílem je, abyste se u nás cítili příjemně a s úsměvem
-        odcházeli.
-      </p>
-
-      <p className="mb-4 text-gray-700">
-        Používáme nejmodernější technologie, dbáme na bezbolestnost zákroků a
-        pravidelně se vzděláváme v nových metodách.
-      </p>
-
-      <p className="text-gray-700">
-        Věříme, že kvalitní stomatologická péče je základem zdravého úsměvu – a
-        ten vám rádi pomůžeme udržet po celý život.
-      </p>
+          {/* Obrázek */}
+          <div className="overflow-hidden rounded-xl shadow-md">
+            <img
+              src={aboutImage}
+              alt="Naše ordinace"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
