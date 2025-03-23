@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section className="bg-gray-50 py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        <h2 className="text-4xl font-bold text-blue-700 mb-12 text-center">
+        <h2 className="text-4xl font-bold text-green-700 mb-12 text-center">
           Kontakt
         </h2>
 
@@ -22,7 +22,7 @@ export default function Contact() {
                 📞 Telefon:{' '}
                 <a
                   href="tel:+420123456789"
-                  className="text-blue-600 hover:underline"
+                  className="text-green-600 hover:underline"
                 >
                   +420 123 456 789
                 </a>
@@ -31,7 +31,7 @@ export default function Contact() {
                 📧 E-mail:{' '}
                 <a
                   href="mailto:info@arvadent.cz"
-                  className="text-blue-600 hover:underline"
+                  className="text-green-600 hover:underline"
                 >
                   info@arvadent.cz
                 </a>

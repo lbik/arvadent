@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="bg-gray-50 py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        <h2 className="text-4xl font-bold text-blue-700 mb-12 text-center">
+        <h2 className="text-4xl font-bold text-green-700 mb-12 text-center">
           O nás
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">

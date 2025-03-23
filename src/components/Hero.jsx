@@ -3,6 +3,7 @@ import backgroundImage from '../assets/main_page.jpg'; // nebo vlastní hero obr
 export default function Hero() {
   return (
     <section
+      id="hero"
       className="relative h-screen bg-cover bg-center flex items-center justify-center"
       style={{backgroundImage: `url(${backgroundImage})`}}
     >
@@ -21,13 +22,13 @@ export default function Hero() {
         <div className="space-x-4">
           <a
             href="#kontakt"
-            className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+            className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition"
           >
             Objednat se
           </a>
           <a
             href="#o-nas"
-            className="text-white border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition"
+            className="text-white border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition"
           >
             Více o nás
           </a>

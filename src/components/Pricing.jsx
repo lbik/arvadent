@@ -27,7 +27,7 @@ export default function Pricing() {
   return (
     <section className="bg-white py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        <h2 className="text-4xl font-bold text-blue-700 mb-12 text-center">
+        <h2 className="text-4xl font-bold text-green-700 mb-12 text-center">
           Ceník
         </h2>
 
@@ -46,7 +46,7 @@ export default function Pricing() {
                     <span className="text-gray-800 font-medium">
                       {item.service}
                     </span>
-                    <span className="text-blue-700 font-bold">
+                    <span className="text-green-700 font-bold">
                       {item.price}
                     </span>
                   </div>
@@ -55,6 +55,19 @@ export default function Pricing() {
             </div>
           </div>
         ))}
+
+        {/* ✅ Smluvní pojišťovny */}
+        <div className="mt-20 bg-green-50 border-l-4 border-green-600 p-6 rounded-lg shadow-sm">
+          <h3 className="text-2xl font-semibold text-green-700 mb-4">
+            Smluvní pojišťovny
+          </h3>
+          <ul className="list-disc list-inside text-gray-800 space-y-1">
+            <li>Všeobecná zdravotní pojišťovna</li>
+            <li>Vojenská zdravotní pojišťovna ČR</li>
+            <li>Oborová zdravotní pojišťovna</li>
+            <li>Revírní bratrská pokladna, zdravotní pojišťovna</li>
+          </ul>
+        </div>
       </div>
     </section>
   );
