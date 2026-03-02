@@ -1,6 +1,6 @@
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
-    <main className="min-h-screen w-full flex flex-col items-center">
+    <main className="flex-1 w-full">
       {children}
     </main>
   );
