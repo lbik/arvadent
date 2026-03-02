@@ -12,7 +12,7 @@ import Pricing from './pages/Pricing';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Routes>
         {/* Admin stránka bez headeru/footeru */}
         <Route path="/admin" element={<Admin />} />
