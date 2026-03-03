@@ -1,7 +1,7 @@
 {
-  "active": false,
-  "type": "info",
-  "title": "",
-  "message": "",
-  "expiresAt": ""
+  "active": true,
+  "type": "holiday",
+  "title": "Dovolena ",
+  "message": "Ordinace bude uzavrena 24.12.2025 - 2.1.2026.",
+  "expiresAt": "2026-03-04"
 }
