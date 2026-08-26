@@ -50,12 +50,12 @@ export default function AnnouncementBanner() {
   const style = typeStyles[announcement.type] || typeStyles.info;
 
   return (
-    <div className={`border-b ${style.bg} ${style.text}`}>
-      <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-start gap-3">
-        <span className="mt-0.5 shrink-0">{style.icon}</span>
-        <div className="flex-1 text-sm">
+    <div className={`border-b-2 ${style.bg} ${style.text}`}>
+      <div className="max-w-screen-xl mx-auto px-6 py-5 flex items-center gap-4">
+        <span className="shrink-0 [&_svg]:w-7 [&_svg]:h-7">{style.icon}</span>
+        <div className="flex-1 text-base sm:text-lg font-medium leading-snug">
           {announcement.title && (
-            <span className="font-semibold mr-1.5">{announcement.title}:</span>
+            <span className="font-bold mr-2">{announcement.title}:</span>
           )}
           {announcement.message}
         </div>
@@ -64,7 +64,7 @@ export default function AnnouncementBanner() {
           className="shrink-0 opacity-60 hover:opacity-100 transition-opacity"
           aria-label="Zavřít"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
           </svg>
         </button>

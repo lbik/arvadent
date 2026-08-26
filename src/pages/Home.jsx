@@ -41,6 +41,16 @@ const reviews = [
   { text: 'Nejlepší zubař co znám – já se všeho bojím, opravdu jsem šťastná, že chodíme k němu.' },
 ];
 
+const hours = [
+  { day: 'Pondělí', time: '8:00–16:00' },
+  { day: 'Úterý', time: '8:00–16:00' },
+  { day: 'Středa', time: '8:00–15:30' },
+  { day: 'Čtvrtek', time: '8:00–15:00' },
+  { day: 'Pátek', time: '7:30–12:00' },
+  { day: 'Sobota', time: 'Zavřeno' },
+  { day: 'Neděle', time: 'Zavřeno' },
+];
+
 const insurers = [
   { name: 'VZP', full: 'Všeobecná zdravotní pojišťovna', logo: 'vseobecnazdraovnipojistovna.png' },
   { name: 'OZP', full: 'Oborová zdravotní pojišťovna', logo: 'oborovazdravotnipojistovna.jpg' },
@@ -125,15 +135,9 @@ export default function Home() {
               Objednáváme pouze registrované pacienty
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="tel:+420732651595"
-                className="px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-primary-900/40"
-              >
-                Telefon objednávky: +420 732 651 595
-              </a>
               <Link
                 to="/o-nas"
-                className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors backdrop-blur-sm"
+                className="px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-primary-900/40"
               >
                 Více o nás
               </Link>
@@ -219,11 +223,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ordinační hodiny a kontakt */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight mb-6">
+              Ordinační hodiny
+            </h2>
+            <div className="space-y-2">
+              {hours.map(({ day, time }) => (
+                <div key={day} className="flex justify-between text-sm border-b border-slate-200 py-2">
+                  <span className={time === 'Zavřeno' ? 'text-slate-400' : 'text-slate-700'}>{day}</span>
+                  <span className={time === 'Zavřeno' ? 'text-slate-400' : 'text-slate-900 font-medium'}>{time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-slate-50 border border-slate-100 shadow-sm rounded-2xl p-8 text-center">
+            <p className="text-slate-600 mb-2">Potřebujete se objednat nebo se na něco zeptat?</p>
+            <p className="text-amber-600 text-sm mb-6 font-medium">Ordinace aktuálně nepřijímá nové pacienty.</p>
+            <a
+              href="tel:+420732651595"
+              className="inline-block px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-primary-900/40"
+            >
+              Objednat se: +420 732 651 595
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Recenze carousel */}
       <ReviewCarousel />
 
       {/* Pojišťovny */}
-      <section className="bg-white py-16 px-6">
+      <section className="bg-slate-50 py-16 px-6">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-2">
@@ -232,7 +265,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {insurers.map(ins => (
-              <div key={ins.name} className="flex items-center gap-3 px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-primary-300 hover:bg-white hover:scale-110 hover:shadow-md transition-all duration-200 cursor-default">
+              <div key={ins.name} className="flex items-center gap-3 px-5 py-3.5 bg-white border border-slate-200 rounded-xl hover:border-primary-300 hover:bg-white hover:scale-110 hover:shadow-md transition-all duration-200 cursor-default">
                 <div className="w-12 h-12 rounded-lg bg-white border border-slate-100 flex items-center justify-center shrink-0 p-1">
                   <img src={`${base}photos/${ins.logo}`} alt={ins.name} className="w-full h-full object-contain" />
                 </div>

@@ -6,7 +6,7 @@ export default function Header() {
 
   const navLinks = [
     { to: '/o-nas', label: 'O nás' },
-    { to: '/cenik', label: 'Ceník' },
+    { to: '/cenik', label: 'Nabízíme' },
     { to: '/kontakt', label: 'Kontakt' },
   ];
 

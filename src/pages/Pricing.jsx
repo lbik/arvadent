@@ -18,14 +18,6 @@ export default function Pricing() {
 
   return (
     <div>
-      {/* Hero banner */}
-      <section className="bg-slate-900 py-16 px-6">
-        <div className="max-w-screen-xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-3">Ceník</h1>
-          <p className="text-slate-400 text-lg">Transparentní ceny bez skrytých poplatků.</p>
-        </div>
-      </section>
-
       {/* Co můžeme nabídnout */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-center">

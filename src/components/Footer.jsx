@@ -26,7 +26,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-white transition-colors">Úvod</Link></li>
             <li><Link to="/o-nas" className="hover:text-white transition-colors">O nás</Link></li>
-            <li><Link to="/cenik" className="hover:text-white transition-colors">Ceník</Link></li>
+            <li><Link to="/cenik" className="hover:text-white transition-colors">Nabízíme</Link></li>
             <li><Link to="/kontakt" className="hover:text-white transition-colors">Kontakt</Link></li>
           </ul>
         </div>

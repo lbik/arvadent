@@ -47,9 +47,11 @@ export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [form, setForm] = useState({ active: false, type: 'info', title: '', message: '', expiresAt: '' });
+  const [live, setLive] = useState(null);
   const [sha, setSha] = useState('');
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
+  const [removing, setRemoving] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -60,14 +62,16 @@ export default function Admin() {
     try {
       setLoading(true);
       const { sha: fileSha, content } = await getFileSha(token);
-      setSha(fileSha);
-      setForm({
+      const normalized = {
         active: content.active ?? false,
         type: content.type ?? 'info',
         title: content.title ?? '',
         message: content.message ?? '',
         expiresAt: content.expiresAt ?? '',
-      });
+      };
+      setSha(fileSha);
+      setForm(normalized);
+      setLive(normalized);
       setIsLoggedIn(true);
       setError('');
     } catch (e) {
@@ -75,6 +79,25 @@ export default function Admin() {
       setIsLoggedIn(false);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleQuickRemove() {
+    if (!window.confirm('Opravdu chcete oznámení okamžitě odstranit z webu?')) return;
+    setRemoving(true);
+    setStatus('');
+    setError('');
+    try {
+      const { sha: freshSha, content } = await getFileSha(token);
+      const cleared = { ...content, active: false };
+      await updateFile(token, freshSha, cleared);
+      setLive(cleared);
+      setForm(cleared);
+      setStatus('Oznámení bylo odstraněno z webu.');
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setRemoving(false);
     }
   }
 
@@ -100,6 +123,7 @@ export default function Admin() {
       const { sha: freshSha } = await getFileSha(token);
       await updateFile(token, freshSha, form);
       setSha(freshSha);
+      setLive(form);
       setStatus('Uloženo! Změny se projeví na webu za 1–2 minuty.');
     } catch (e) {
       setError(e.message);
@@ -182,10 +206,47 @@ export default function Admin() {
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-10">
+        {/* Aktuálně na webu */}
+        {live && (
+          <div className="mb-6 bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Aktuálně na webu</p>
+              <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+                live.active ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-slate-100 text-slate-500 border border-slate-200'
+              }`}>
+                {live.active ? 'Aktivní' : 'Vypnuto'}
+              </span>
+            </div>
+
+            {live.active && live.message ? (
+              <>
+                <div className={`p-4 rounded-xl border text-sm mb-4 ${
+                  live.type === 'holiday' ? 'bg-rose-50 border-rose-200 text-rose-800' :
+                  live.type === 'warning' ? 'bg-amber-50 border-amber-200 text-amber-800' :
+                  'bg-primary-50 border-primary-200 text-primary-800'
+                }`}>
+                  {live.title && <strong className="mr-1">{live.title}:</strong>}
+                  {live.message}
+                </div>
+                <button
+                  type="button"
+                  onClick={handleQuickRemove}
+                  disabled={removing}
+                  className="w-full py-2.5 bg-rose-50 hover:bg-rose-100 disabled:opacity-60 text-rose-700 font-semibold rounded-xl border border-rose-200 transition-colors text-sm"
+                >
+                  {removing ? 'Odstraňuji...' : 'Okamžitě odstranit oznámení z webu'}
+                </button>
+              </>
+            ) : (
+              <p className="text-sm text-slate-400">Na webu se aktuálně nezobrazuje žádné oznámení.</p>
+            )}
+          </div>
+        )}
+
         {/* Preview banneru */}
         {form.active && form.message && (
           <div className="mb-6">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Náhled banneru</p>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Náhled rozpracované změny</p>
             <div className={`p-4 rounded-xl border text-sm ${
               form.type === 'holiday' ? 'bg-rose-50 border-rose-200 text-rose-800' :
               form.type === 'warning' ? 'bg-amber-50 border-amber-200 text-amber-800' :
