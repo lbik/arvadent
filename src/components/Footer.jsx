@@ -33,19 +33,16 @@ export default function Footer() {
 
         {/* Kontakt */}
         <div>
-          <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Kontakt</h3>
+          <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Spojte se s námi</h3>
           <ul className="space-y-2 text-sm">
             <li>Antonína Macka 122/1, Ostrava</li>
             <li>
-              <a href="tel:586413863" className="hover:text-white transition-colors">586 413 863</a>
+              <a href="tel:+420732651595" className="hover:text-white transition-colors">RECEPCE: +420 732 651 595</a>
             </li>
             <li>
               <a href="mailto:info@arvadent.cz" className="hover:text-white transition-colors">info@arvadent.cz</a>
             </li>
-            <li className="pt-2 text-slate-400">
-              Po–Čt: 8:00–16:00<br />
-              Pá: 7:30–12:00
-            </li>
+            <li className="pt-2 text-slate-400">IČO: 71226346</li>
           </ul>
         </div>
       </div>

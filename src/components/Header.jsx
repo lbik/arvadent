@@ -43,10 +43,10 @@ export default function Header() {
             </NavLink>
           ))}
           <a
-            href="tel:586413863"
+            href="tel:+420732651595"
             className="ml-3 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-lg transition-colors"
           >
-            586 413 863
+            +420 732 651 595
           </a>
         </nav>
 
@@ -88,10 +88,10 @@ export default function Header() {
             </NavLink>
           ))}
           <a
-            href="tel:586413863"
+            href="tel:+420732651595"
             className="mt-2 px-4 py-3 bg-primary-600 text-white text-sm font-medium rounded-lg text-center"
           >
-            Zavolat: 586 413 863
+            Zavolat: +420 732 651 595
           </a>
         </div>
       )}

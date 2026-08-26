@@ -5,11 +5,6 @@ const base = import.meta.env.BASE_URL;
 
 const features = [
   {
-    icon: <img src={`${base}photos/tool.svg`} width="28" height="28" alt="" />,
-    title: 'Moderní vybavení',
-    desc: 'Pracujeme s nejnovějšími technologiemi pro maximální přesnost a komfort.',
-  },
-  {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -51,6 +46,7 @@ const insurers = [
   { name: 'OZP', full: 'Oborová zdravotní pojišťovna', logo: 'oborovazdravotnipojistovna.jpg' },
   { name: 'VoZP', full: 'Vojenská zdravotní pojišťovna', logo: 'vojenskazdraovtnipojistovna.png' },
   { name: 'RBP', full: 'Revírní bratrská pokladna', logo: 'revirnibratrskapokladnapojistovna.jpg' },
+  { name: 'ČPZP', full: 'Česká průmyslová zdravotní pojišťovna', logo: 'cpzp.png' },
 ];
 
 function ReviewCarousel() {
@@ -130,10 +126,10 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:586413863"
+                href="tel:+420732651595"
                 className="px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-primary-900/40"
               >
-                Pro registrované pacienty: 586 413 863
+                Telefon objednávky: +420 732 651 595
               </a>
               <Link
                 to="/o-nas"
@@ -157,7 +153,7 @@ export default function Home() {
               Staráme se o váš chrup s péčí a odborností, na které se můžete spolehnout.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group">
                 <div className="w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
@@ -183,12 +179,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Lékař */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-              <div className="aspect-[3/4] overflow-hidden bg-slate-100">
-                <img
-                  src={`${base}photos/lekar2.jpeg`}
-                  alt="MUDr. Tomáš Arvai"
-                  className="w-full h-full object-cover object-top"
-                />
+              <div className="aspect-[3/4] bg-slate-100 flex items-center justify-center">
+                <div className="text-center text-slate-400">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
+                    <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/>
+                  </svg>
+                  <p className="text-xs">Foto bude doplněno</p>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold text-slate-900">MUDr. Tomáš Arvai</h3>
@@ -199,7 +196,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            {/* Sestřička – placeholder */}
+            {/* Sestřička */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
               <div className="aspect-[3/4] bg-slate-100 flex items-center justify-center">
                 <div className="text-center text-slate-400">
@@ -210,14 +207,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                  TODO – doplnit jméno
-                  <span className="text-xs font-normal text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">doplnit</span>
-                </h3>
+                <h3 className="text-lg font-bold text-slate-900">Marcela Zimanová</h3>
                 <p className="text-primary-600 text-sm font-medium mb-3">Zdravotní sestra</p>
                 <p className="text-sm text-slate-500 leading-relaxed">
                   Nepostradatelná součást týmu. Stará se nejen o pacienty, ale i o hladký chod
-                  celé ordinace – od administrativy a objednávání až po přípravu ošetření.
+                  celé ordinace – od administrativy až po přípravu ošetření.
                 </p>
               </div>
             </div>
@@ -252,35 +246,6 @@ export default function Home() {
           <p className="text-center text-xs text-slate-400 mt-6">
             * Přesný seznam smluvních pojišťoven ověřte prosím telefonicky.
           </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-primary-600 py-16 px-6">
-        <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-3 tracking-tight">
-            Jste naším pacientem?
-          </h2>
-          <p className="text-primary-200 mb-2 text-lg">
-            Ordinace aktuálně nepřijímá nové pacienty.
-          </p>
-          <p className="text-primary-300 mb-8 text-sm">
-            Pro registrované pacienty – zavolejte nám nebo napište e-mail pro objednání termínu.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:586413863"
-              className="px-6 py-3.5 bg-white text-primary-700 font-semibold rounded-xl hover:bg-primary-50 transition-colors shadow"
-            >
-              📞 586 413 863
-            </a>
-            <a
-              href="mailto:info@arvadent.cz"
-              className="px-6 py-3.5 bg-primary-700 text-white font-semibold rounded-xl hover:bg-primary-800 transition-colors"
-            >
-              ✉ info@arvadent.cz
-            </a>
-          </div>
         </div>
       </section>
     </div>

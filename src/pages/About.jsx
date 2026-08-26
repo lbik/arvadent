@@ -23,7 +23,7 @@ const values = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     ),
-    title: 'Bezpečnost na prvním místě',
+    title: 'Zdraví na prvním místě',
     desc: 'Přísné hygienické standardy a špičkové vybavení garantují bezpečné ošetření.',
   },
 ];
@@ -95,12 +95,13 @@ export default function About() {
       {/* Lékař */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4] md:aspect-auto">
-            <img
-              src={`${base}photos/lekar2.jpeg`}
-              alt="MUDr. Tomáš Arvai"
-              className="w-full h-full object-cover object-top"
-            />
+          <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4] md:aspect-auto bg-slate-100 flex items-center justify-center">
+            <div className="text-center text-slate-400 p-8">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-3">
+                <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/>
+              </svg>
+              <p className="text-sm">Foto bude doplněno</p>
+            </div>
           </div>
           <div>
             <p className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-2">Vedoucí lékař</p>
@@ -136,14 +137,13 @@ export default function About() {
         <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-primary-600 font-semibold text-sm uppercase tracking-widest mb-2">Náš tým</p>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-1 flex items-center gap-3">
-              TODO – doplnit jméno
-              <span className="text-xs font-normal text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">doplnit</span>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-1">
+              Marcela Zimanová
             </h2>
             <p className="text-primary-600 text-sm font-medium mb-4">Zdravotní sestra</p>
             <p className="text-slate-600 leading-relaxed">
               Nepostradatelná součást ordinace. Pečuje o pacienty a zároveň se podílí na hladkém
-              chodu celé ordinace – od administrativy a objednávání přes přípravu nástrojů
+              chodu celé ordinace – od administrativy přes přípravu nástrojů
               až po péči o příjemné prostředí pro každého pacienta.
             </p>
           </div>
