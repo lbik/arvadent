@@ -1,6 +1,6 @@
 {
   "active": true,
-  "type": "holiday",
+  "type": "warning",
   "title": "test ",
   "message": "test ",
   "expiresAt": "2026-11-01"
