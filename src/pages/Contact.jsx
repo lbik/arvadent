@@ -91,7 +91,7 @@ export default function Contact() {
 
           {/* Mapa */}
           <div className="flex flex-col gap-6">
-            <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-[4/3]">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-[3/4] max-h-[480px]">
               <img
                 src={`${import.meta.env.BASE_URL}photos/vstup.jpeg`}
                 alt="Vchod do ordinace"
@@ -110,7 +110,7 @@ export default function Contact() {
             </div>
             <div className="p-5 bg-primary-50 border border-primary-100 rounded-2xl text-sm text-primary-700">
               <strong>Jak se k nám dostat:</strong> Nacházíme se na ulici Antonína Macka v centru Moravské Ostravy.
-              Zastávky MHD v bezprostřední blízkosti, parkování v okolí.
+              Nejbližší zastávka MHD je Most M. Sýkory.
             </div>
           </div>
         </div>
